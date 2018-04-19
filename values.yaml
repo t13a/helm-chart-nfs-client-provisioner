@@ -1,0 +1,40 @@
+image:
+  repository: quay.io/external_storage/nfs-client-provisioner
+  tag: v2.0.1
+  pullPolicy: IfNotPresent
+
+provisioner:
+  # mandadory
+  # name: fuseim.pri/ifs
+
+nfs: {}
+  # mandadory
+  # server: 10.10.10.60
+  # mandadory
+  # path: /ifs/kubernetes
+
+rbac:
+  create: true
+
+serviceAccount:
+  create: true
+  name:
+
+storageClass:
+  create: true
+  name:
+  # isDefaultClass: false
+
+resources: {}
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
